@@ -37,13 +37,13 @@ if __name__ == "__main__":
             'จอดรถโรงอาหารกลาง': 75654,
             'อาคารสำนักงาน 3': 22147,
             'ข่วงพยอม': 1159}
+    
     option = st.selectbox(
-        "How would you like to be contacted?",
+        "What month would you like to select?",
         ("Email", "Home phone", "Mobile phone"),
         index=None,
-        placeholder="Select contact method...",
+        placeholder="Select month...",
     )
-
     st.write('You selected:', option)
 
     coor = [(18.793383392039146, 98.95333379108743), (18.799566391546588, 98.9533094270958), (18.795957161465292, 98.95724241090699), (18.79171479533299, 98.95879560971413), (18.796576057863906, 98.9532826556333), (18.808277546950226, 98.95463338683885), (18.799530189229277, 98.95545297967308), (18.80267229218127, 98.95153342416431), (18.799442513831558, 98.95190873634111), (18.78999549520462, 98.97096228612112), (18.803899913625923, 98.95388106655491), (18.803916297724793, 98.94904676538084), (18.794274483304857, 98.95035038949155), (18.795345102354286, 98.96170678168215), (18.805032997209665, 98.9504519097645),
@@ -63,6 +63,6 @@ if __name__ == "__main__":
 
     tab1, tab2 = st.tabs(["Chart1", "Chart2"])
     with tab1:
-        st.plotly_chart(fig, use_container_width=True, theme='streamlit')
+        st.plotly_chart(fig, use_container_width=False, theme='streamlit')
     with tab2:
-        st.plotly_chart(fig, use_container_width=True, theme='streamlit')
+        st.plotly_chart(fig, use_container_width=False, theme='streamlit')
