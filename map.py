@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     
     fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="f", size="f",
-                            title='จำนวนรถเข้า-ออกแต่ละประตู' 
+                            title='จำนวนรถเข้า-ออกแต่ละประตู' ,
                             color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=10,
                             mapbox_style="carto-positron", width=100)
     
