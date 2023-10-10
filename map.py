@@ -20,7 +20,7 @@ def plot_map(dff):
     fig4 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_moto", size="num_moto", text="gate name", title='จำนวนรถจักรยานยนต์เข้า-ออกแต่ละประตู',
                             color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
-    tab1, tab2, tab3, tab4 = st.tabs(["Chart1", "Chart2", "Chart3", "Chart4"])
+    tab1, tab2, tab3, tab4 = st.tabs(["จำนวนรถออกแต่ละประตู", "จำนวนรถเข้าแต่ละประตู", "จำนวนรถยนต์เข้า-ออกแต่ละประตู", "จำนวนรถจักรยานยนต์เข้า-ออกแต่ละประตู"])
     with tab1:
         st.plotly_chart(fig, use_container_width=False, theme='streamlit', width=1500, height=600)
     with tab2:
