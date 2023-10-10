@@ -46,7 +46,8 @@ if __name__ == "__main__":
     dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                        'long': long, 'f': gate_namef})
 
-    import plotly.express as px
+    
     fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="f", size="f",
                             color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10,
                             mapbox_style="carto-positron")
+    st.plotly_chart(fig, use_container_width=True)
