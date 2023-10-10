@@ -67,6 +67,6 @@ if __name__ == "__main__":
     tab1, tab2 = st.tabs(["Chart1", "Chart2"])
     with tab1:
 
-        st.plotly_chart(fig, use_container_width=False, theme='streamlit', width=800, height=400)
+        st.plotly_chart(fig, use_container_width=False, theme='streamlit', width=1500, height=600)
     with tab2:
-        st.plotly_chart(fig2, use_container_width=False, theme='streamlit', width=800, height=400)
+        st.plotly_chart(fig2, use_container_width=False, theme='streamlit', width=1500, height=600)
