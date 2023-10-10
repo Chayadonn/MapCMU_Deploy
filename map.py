@@ -56,7 +56,7 @@ if __name__ == "__main__":
                        'long': long, 'f': gate_namef})
 
     fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="f", size="f",
-                            title='จำนวนรถเข้า-ออกแต่ละประตู', text="gate name"
+                            title='จำนวนรถเข้า-ออกแต่ละประตู', text="gate name",
                             color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=15,
                             mapbox_style="carto-positron", width=100)
 
