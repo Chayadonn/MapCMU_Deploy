@@ -3,7 +3,6 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 
-
 if __name__ == "__main__":
     st.title(':violet[CMU] MAP :sunglasses:')
 
