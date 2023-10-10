@@ -55,9 +55,9 @@ if __name__ == "__main__":
     gate_namef = list(gate.values())
     gate_name = list(gate.keys())
     dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
-                       'long': long, 'f': gate_namef})
+                       'long': long, 'num_of_in/out': gate_namef})
 
-    fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="f", size="f", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
+    fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_of_in/out", size="num_of_in/out", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
                             color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
 
