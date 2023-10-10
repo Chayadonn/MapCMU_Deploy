@@ -5,19 +5,19 @@ import pandas as pd
 
 def plot_map(dff):
     # Month out
-    fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="gate_out", size="gate_out", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
+    fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="gate_out", size="gate_out", text="gate name", title='จำนวนรถออกแต่ละประตู',
                             color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
     # Month in
-    fig2 = px.scatter_mapbox(dff, lat="lat", lon="long", color="gate_in", size="gate_in", text="gate name", title='จำนวนรถเครื่องเข้า-ออกแต่ละประตู',
+    fig2 = px.scatter_mapbox(dff, lat="lat", lon="long", color="gate_in", size="gate_in", text="gate name", title='จำนวนรถเข้าแต่ละประตู',
                             color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
     # num of car
-    fig3 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_car", size="num_car", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
+    fig3 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_car", size="num_car", text="gate name", title='จำนวนรถยนต์เข้า-ออกแต่ละประตู',
                             color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
     # num of moto
-    fig4 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_moto", size="num_moto", text="gate name", title='จำนวนรถเครื่องเข้า-ออกแต่ละประตู',
+    fig4 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_moto", size="num_moto", text="gate name", title='จำนวนรถจักรยานยนต์เข้า-ออกแต่ละประตู',
                             color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
     tab1, tab2, tab3, tab4 = st.tabs(["Chart1", "Chart2", "Chart3", "Chart4"])
