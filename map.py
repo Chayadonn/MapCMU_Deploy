@@ -123,7 +123,30 @@ if __name__ == "__main__":
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
         plot_map(dff)
-        
+    
+    elif option == 'May':
+        lat = [coor[x][0] for x in range(len(coor))]
+        long = [coor[x][1] for x in range(len(coor))]
+        gate_out_nameMonth = list(dff['o-M_5'])
+        gate_in_Month = list(dff['i-M_5'])
+        num_of_car = list(dff['car-M_5'])
+        num_of_moto = list(dff['motorcycle-M_5'])
+        gate_name = list(gate.keys())
+        dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
+                        'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
+        plot_map(dff)
+     
+    elif option == 'June':
+        lat = [coor[x][0] for x in range(len(coor))]
+        long = [coor[x][1] for x in range(len(coor))]
+        gate_out_nameMonth = list(dff['o-M_6'])
+        gate_in_Month = list(dff['i-M_6'])
+        num_of_car = list(dff['car-M_6'])
+        num_of_moto = list(dff['motorcycle-M_6'])
+        gate_name = list(gate.keys())
+        dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
+                        'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
+        plot_map(dff)
     
 
     
