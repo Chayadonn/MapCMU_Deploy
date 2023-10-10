@@ -31,10 +31,8 @@ def plot_map(dff):
     with tab4:
         st.plotly_chart(fig4, use_container_width=False, theme='streamlit', width=15000, height=600)
     
-    on = st.toggle('Activate feature')
-
+    on = st.toggle('Show summary table')
     if on:
-        st.write('Feature activated!')
         st.table(dff)
 
 if __name__ == "__main__":
