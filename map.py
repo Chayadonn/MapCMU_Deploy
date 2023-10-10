@@ -5,7 +5,7 @@ import pandas as pd
 
 
 if __name__ == "__main__":
-    st.title('purple[CMU] :MAP :sunglasses:')
+    st.title(':purple[CMU] MAP :sunglasses:')
     gate = {'วิศวกรรมศาสตร์': 4174653,
             'แยก อมช': 2898242,
             'แยกบริหาร': 2264162,
