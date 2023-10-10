@@ -5,8 +5,7 @@ import pandas as pd
 
 
 if __name__ == "__main__":
-    # st.title(':purple[CMU] MAP :sunglasses:')
-    st.title('<font color="purple">:purple[CMU] MAP :sunglasses:</font>')
+    st.title(':violet[CMU] MAP :sunglasses:')
 
     gate = {'วิศวกรรมศาสตร์': 4174653,
             'แยก อมช': 2898242,
