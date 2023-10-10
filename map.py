@@ -14,22 +14,22 @@ def plot_map(dff):
                             mapbox_style="carto-positron")
     # num of car
     fig3 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_car", size="num_car", text="gate name", title='จำนวนรถยนต์เข้า-ออกแต่ละประตู',
-                            color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
+                            color_continuous_scale=px.colors.cyclical.Phase, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
     # num of moto
     fig4 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_moto", size="num_moto", text="gate name", title='จำนวนรถจักรยานยนต์เข้า-ออกแต่ละประตู',
-                            color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
+                            color_continuous_scale=px.colors.cyclical.HSV, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
     tab1, tab2, tab3, tab4 = st.tabs(["จำนวนรถที่ออกแต่ละประตู", "จำนวนรถที่เข้าแต่ละประตู", "จำนวนรถยนต์เข้า-ออกแต่ละประตู", "จำนวนรถจักรยานยนต์เข้า-ออกแต่ละประตู"])
     # Plot each tab
     with tab1:
-        st.plotly_chart(fig, use_container_width=False, theme='streamlit', width=1500, height=600)
+        st.plotly_chart(fig, use_container_width=False, theme='streamlit', width=15000, height=600)
     with tab2:
-        st.plotly_chart(fig2, use_container_width=False, theme='streamlit', width=1500, height=600)
+        st.plotly_chart(fig2, use_container_width=False, theme='streamlit', width=15000, height=600)
     with tab3:
-        st.plotly_chart(fig3, use_container_width=False, theme='streamlit', width=1500, height=600)
+        st.plotly_chart(fig3, use_container_width=False, theme='streamlit', width=15000, height=600)
     with tab4:
-        st.plotly_chart(fig4, use_container_width=False, theme='streamlit', width=1500, height=600)
+        st.plotly_chart(fig4, use_container_width=False, theme='streamlit', width=15000, height=600)
 
 if __name__ == "__main__":
     st.title(':violet[CMU] MAP :sunglasses:')
