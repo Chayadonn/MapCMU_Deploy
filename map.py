@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
     fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="f", size="f",
                             title='จำนวนรถเข้า-ออกแต่ละประตู', text="gate name",
-                            color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
+                            color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=11,
                             mapbox_style="carto-positron")
 
     tab1, tab2 = st.tabs(["Chart1", "Chart2"])
