@@ -3,6 +3,33 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 
+def plot_map(dff):
+    # Month out
+    fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="gate_out", size="gate_out", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
+                            color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
+                            mapbox_style="carto-positron")
+    # Month in
+    fig2 = px.scatter_mapbox(dff, lat="lat", lon="long", color="gate_in", size="gate_in", text="gate name", title='จำนวนรถเครื่องเข้า-ออกแต่ละประตู',
+                            color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
+                            mapbox_style="carto-positron")
+    # num of car
+    fig3 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_car", size="num_car", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
+                            color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
+                            mapbox_style="carto-positron")
+    # num of moto
+    fig4 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_moto", size="num_moto", text="gate name", title='จำนวนรถเครื่องเข้า-ออกแต่ละประตู',
+                            color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
+                            mapbox_style="carto-positron")
+    tab1, tab2, tab3, tab4 = st.tabs(["Chart1", "Chart2", "Chart3", "Chart4"])
+    with tab1:
+        st.plotly_chart(fig, use_container_width=False, theme='streamlit', width=1500, height=600)
+    with tab2:
+        st.plotly_chart(fig2, use_container_width=False, theme='streamlit', width=1500, height=600)
+    with tab3:
+        st.plotly_chart(fig3, use_container_width=False, theme='streamlit', width=1500, height=600)
+    with tab4:
+        st.plotly_chart(fig4, use_container_width=False, theme='streamlit', width=1500, height=600)
+
 if __name__ == "__main__":
     st.title(':violet[CMU] MAP :sunglasses:')
     dff = pd.read_csv('car.csv')
@@ -59,6 +86,8 @@ if __name__ == "__main__":
         gate_name = list(gate.keys())
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
+        plot_map(dff)
+
     elif option == 'February':
         lat = [coor[x][0] for x in range(len(coor))]
         long = [coor[x][1] for x in range(len(coor))]
@@ -69,31 +98,33 @@ if __name__ == "__main__":
         gate_name = list(gate.keys())
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
+        plot_map(dff)
 
+    elif option == 'March':
+        lat = [coor[x][0] for x in range(len(coor))]
+        long = [coor[x][1] for x in range(len(coor))]
+        gate_out_nameMonth = list(dff['o-M_3'])
+        gate_in_Month = list(dff['i-M_3'])
+        num_of_car = list(dff['car-M_3'])
+        num_of_moto = list(dff['motorcycle-M_3'])
+        gate_name = list(gate.keys())
+        dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
+                        'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
+        plot_map(dff)
 
-    # Month out
-    fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="gate_out", size="gate_out", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
-                            color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
-                            mapbox_style="carto-positron")
-    # Month in
-    fig2 = px.scatter_mapbox(dff, lat="lat", lon="long", color="gate_in", size="gate_in", text="gate name", title='จำนวนรถเครื่องเข้า-ออกแต่ละประตู',
-                            color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
-                            mapbox_style="carto-positron")
-    # num of car
-    fig3 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_car", size="num_car", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
-                            color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
-                            mapbox_style="carto-positron")
-    # num of moto
-    fig4 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_moto", size="num_moto", text="gate name", title='จำนวนรถเครื่องเข้า-ออกแต่ละประตู',
-                            color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
-                            mapbox_style="carto-positron")
+    elif option == 'April':
+        lat = [coor[x][0] for x in range(len(coor))]
+        long = [coor[x][1] for x in range(len(coor))]
+        gate_out_nameMonth = list(dff['o-M_4'])
+        gate_in_Month = list(dff['i-M_4'])
+        num_of_car = list(dff['car-M_4'])
+        num_of_moto = list(dff['motorcycle-M_4'])
+        gate_name = list(gate.keys())
+        dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
+                        'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
+        plot_map(dff)
+        
     
-    tab1, tab2, tab3, tab4 = st.tabs(["Chart1", "Chart2", "Chart3", "Chart4"])
-    with tab1:
-        st.plotly_chart(fig, use_container_width=False, theme='streamlit', width=1500, height=600)
-    with tab2:
-        st.plotly_chart(fig2, use_container_width=False, theme='streamlit', width=1500, height=600)
-    with tab3:
-        st.plotly_chart(fig3, use_container_width=False, theme='streamlit', width=1500, height=600)
-    with tab4:
-        st.plotly_chart(fig4, use_container_width=False, theme='streamlit', width=1500, height=600)
+
+    
+
