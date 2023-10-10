@@ -20,7 +20,8 @@ def plot_map(dff):
     fig4 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_moto", size="num_moto", text="gate name", title='จำนวนรถจักรยานยนต์เข้า-ออกแต่ละประตู',
                             color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
-    tab1, tab2, tab3, tab4 = st.tabs(["จำนวนรถออกแต่ละประตู", "จำนวนรถเข้าแต่ละประตู", "จำนวนรถยนต์เข้า-ออกแต่ละประตู", "จำนวนรถจักรยานยนต์เข้า-ออกแต่ละประตู"])
+    tab1, tab2, tab3, tab4 = st.tabs(["จำนวนรถที่ออกแต่ละประตู", "จำนวนรถที่เข้าแต่ละประตู", "จำนวนรถยนต์เข้า-ออกแต่ละประตู", "จำนวนรถจักรยานยนต์เข้า-ออกแต่ละประตู"])
+    # Plot each tab
     with tab1:
         st.plotly_chart(fig, use_container_width=False, theme='streamlit', width=1500, height=600)
     with tab2:
@@ -77,8 +78,10 @@ if __name__ == "__main__":
             (18.801370518953103, 98.95665780068265), (18.801101919428785, 98.95739818263235), (18.800383655508554, 98.95368047163448), (18.7997525526264, 98.94884952861116), (18.795583346617565, 98.95860079330882), (18.805539021855953, 98.95548922372875), (18.79304544951939, 98.95451932140443), (18.79238184497654, 98.95748162239498), (18.796731194349526, 98.96133103728313), (18.793876495552567, 98.9633310637738), (18.79857168849546, 98.95879773748997), (18.807695484637776, 98.9552865829107), (18.799111250877964, 98.95217939144588), (18.803733192640728, 98.95564660146975), (18.791212918521417, 98.96400071057825)]
     
     if option == "January":
-        lat = [coor[x][0] for x in range(len(coor))]
-        long = [coor[x][1] for x in range(len(coor))]
+        # lat = [coor[x][0] for x in range(len(coor))]
+        # long = [coor[x][1] for x in range(len(coor))]
+        lat = list(dff['lat'])
+        long = list(dff['long'])
         gate_out_nameMonth = list(dff['o-M_1'])
         gate_in_Month = list(dff['i-M_1'])
         num_of_car = list(dff['car-M_1'])
