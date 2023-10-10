@@ -37,7 +37,7 @@ def plot_map(dff):
 
 if __name__ == "__main__":
     st.title(':violet[CMU] MAP :sunglasses:')
-    dff = pd.read_csv('car.csv')
+    dff = pd.read_csv('car (1).csv')
 
     gate = {'วิศวกรรมศาสตร์': 4174653,
             'แยก อมช': 2898242,
@@ -90,7 +90,7 @@ if __name__ == "__main__":
         gate_in_Month = list(dff['i-M_1'])
         num_of_car = list(dff['car-M_1'])
         num_of_moto = list(dff['motorcycle-M_1'])
-        gate_name = list(gate.keys())
+        gate_name = list(dff['gate_name'])
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
         plot_map(dff)
@@ -102,7 +102,7 @@ if __name__ == "__main__":
         gate_in_Month = list(dff['i-M_2'])
         num_of_car = list(dff['car-M_2'])
         num_of_moto = list(dff['motorcycle-M_2'])
-        gate_name = list(gate.keys())
+        gate_name = list(dff['gate_name'])
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
         plot_map(dff)
@@ -114,7 +114,7 @@ if __name__ == "__main__":
         gate_in_Month = list(dff['i-M_3'])
         num_of_car = list(dff['car-M_3'])
         num_of_moto = list(dff['motorcycle-M_3'])
-        gate_name = list(gate.keys())
+        gate_name = list(dff['gate_name'])
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
         plot_map(dff)
@@ -126,7 +126,7 @@ if __name__ == "__main__":
         gate_in_Month = list(dff['i-M_4'])
         num_of_car = list(dff['car-M_4'])
         num_of_moto = list(dff['motorcycle-M_4'])
-        gate_name = list(gate.keys())
+        gate_name = list(dff['gate_name'])
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
         plot_map(dff)
@@ -138,7 +138,7 @@ if __name__ == "__main__":
         gate_in_Month = list(dff['i-M_5'])
         num_of_car = list(dff['car-M_5'])
         num_of_moto = list(dff['motorcycle-M_5'])
-        gate_name = list(gate.keys())
+        gate_name = list(dff['gate_name'])
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
         plot_map(dff)
@@ -150,7 +150,7 @@ if __name__ == "__main__":
         gate_in_Month = list(dff['i-M_6'])
         num_of_car = list(dff['car-M_6'])
         num_of_moto = list(dff['motorcycle-M_6'])
-        gate_name = list(gate.keys())
+        gate_name = list(dff['gate_name'])
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
         plot_map(dff)
