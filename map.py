@@ -5,6 +5,7 @@ import pandas as pd
 
 
 if __name__ == "__main__":
+    st.title('purple[CMU] :MAP :sunglasses:')
     gate = {'วิศวกรรมศาสตร์': 4174653,
             'แยก อมช': 2898242,
             'แยกบริหาร': 2264162,
@@ -55,8 +56,7 @@ if __name__ == "__main__":
     dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                        'long': long, 'f': gate_namef})
 
-    fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="f", size="f",
-                            title='จำนวนรถเข้า-ออกแต่ละประตู', text="gate name",
+    fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="f", size="f", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
                             color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
 
