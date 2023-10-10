@@ -61,8 +61,12 @@ if __name__ == "__main__":
                             color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=13,
                             mapbox_style="carto-positron")
 
+    fig2 = px.scatter_mapbox(dff, lat="lat", lon="long", color="num_of_in/out", size="num_of_in/out", text="gate name", title='จำนวนรถเครื่องเข้า-ออกแต่ละประตู',
+                            color_continuous_scale=px.colors.cyclical.Edge, size_max=20, zoom=13,
+                            mapbox_style="carto-positron")
     tab1, tab2 = st.tabs(["Chart1", "Chart2"])
     with tab1:
+
         st.plotly_chart(fig, use_container_width=False, theme='streamlit')
     with tab2:
-        st.plotly_chart(fig, use_container_width=False, theme='streamlit')
+        st.plotly_chart(fig2, use_container_width=False, theme='streamlit')
