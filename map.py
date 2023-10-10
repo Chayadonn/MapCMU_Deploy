@@ -150,7 +150,10 @@ if __name__ == "__main__":
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
         plot_map(dff)
-    
+    on = st.toggle('Activate feature')
 
+    if on:
+        st.write('Feature activated!')
+        st.table(dff)
     
 
