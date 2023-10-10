@@ -51,4 +51,9 @@ if __name__ == "__main__":
                             title='จำนวนรถเข้า-ออกแต่ละประตู' 
                             color_continuous_scale=px.colors.cyclical.IceFire, size_max=20, zoom=10,
                             mapbox_style="carto-positron", width=100)
-    st.plotly_chart(fig, use_container_width=True, theme='streamlit')
+    
+    tab1, tab2 = st.tabs(["Chart1", "Chart2"])
+    with tab1:
+        st.plotly_chart(fig, use_container_width=True, theme='streamlit')
+    with tab2:
+        st.plotly_chart(fig, use_container_width=True, theme='streamlit')
