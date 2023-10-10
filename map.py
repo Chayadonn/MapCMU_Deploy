@@ -36,7 +36,7 @@ def plot_map(dff):
         st.table(dff)
 
 if __name__ == "__main__":
-    st.title(':violet[CMU] MAP :sunglasses:')
+    st.title(':violet[CMU] MAP 2023:sunglasses:')
     dff = pd.read_csv('car (1).csv')
 
     option = st.selectbox(
