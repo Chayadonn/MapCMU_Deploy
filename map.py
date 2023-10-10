@@ -59,6 +59,17 @@ if __name__ == "__main__":
         gate_name = list(gate.keys())
         dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
                         'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
+    elif option == 'February':
+        lat = [coor[x][0] for x in range(len(coor))]
+        long = [coor[x][1] for x in range(len(coor))]
+        gate_out_nameMonth = list(dff['o-M_2'])
+        gate_in_Month = list(dff['i-M_2'])
+        num_of_car = list(dff['car-M_2'])
+        num_of_moto = list(dff['motorcycle-M_2'])
+        gate_name = list(gate.keys())
+        dff = pd.DataFrame({'gate name': gate_name, 'lat': lat,
+                        'long': long, 'gate_out': gate_out_nameMonth, 'gate_in':gate_in_Month, 'num_car':num_of_car, 'num_moto':num_of_moto})
+
 
     # Month out
     fig = px.scatter_mapbox(dff, lat="lat", lon="long", color="gate_out", size="gate_out", text="gate name", title='จำนวนรถเข้า-ออกแต่ละประตู',
